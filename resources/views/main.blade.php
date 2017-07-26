@@ -11,8 +11,8 @@
     </head>
     <body>
         <header>
-            <div class="header__logo"></div>
-            <div class="header__menu"></div>
+          <div class="header__logo"><img src="../img/logo.png" alt=""></div>
+          <div class="header__menu"></div>
         </header>
         <section class="top-image"><img class="top-image__img" src="./img/top_img.jpg" alt="">
             <div class="top-image__text"><span>The <b>AVANTA</b> Furniture <br> Superior Quality</span></div>

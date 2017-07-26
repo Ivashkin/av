@@ -18,6 +18,14 @@ class Main extends BaseController
 
     public function catalog($alias)
     {
-        return view('catalog');
+        $catalog = Catalog::active()->where('alias', $alias)->first();
+
+        if (!$catalog) {
+            throw new \HttpException('Page not found');
+        }
+
+        return view('catalog')->with([
+            'catalog' => $catalog
+        ]);
     }
 }

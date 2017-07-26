@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-    <div class="header__logo"></div>
+    <div class="header__logo"><img src="../img/logo.png" alt=""></div>
     <div class="header__menu"></div>
 </header>
 @yield('content')

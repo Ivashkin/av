@@ -1,6 +1,5 @@
 /node_modules
 /public/hot
-/storage/*.key
 /vendor
 /.idea
 /.vagrant
@@ -11,5 +10,5 @@ npm-debug.log
 _ide_helper.php
 _ide_helper_models.php
 composer.lock
-storage/
+/storage
 tests/

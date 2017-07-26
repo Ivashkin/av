@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'Main@index')->name('main');
+Route::get('/catalog', 'Main@catalog')->name('catalog.view');
 
 Auth::routes();
 

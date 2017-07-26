@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ config('app.name', 'Avanta') }}</title>
-    <link href="./css/jquery.bxslider.css" rel="stylesheet" type="text/css">
-    <link href="./css/main.css" rel="stylesheet" type="text/css">
+    <link href="/css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header>
@@ -54,7 +54,7 @@
     </section>
 </footer>
 <script src="//code.jquery.com/jquery-2.2.4.min.js" defer></script>
-<script src="./js/jquery.bxslider.min.js" defer></script>
-<script src="./js/script.js" defer></script>
+<script src="/js/jquery.bxslider.min.js" defer></script>
+<script src="/js/script.js" defer></script>
 </body>
 </html>

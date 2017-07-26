@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Pro SQL dump
-# Версия 4541
+# Version 4541
 #
 # http://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
-# Адрес: 127.0.0.1 (MySQL 5.7.19)
-# Схема: avanta
-# Время создания: 2017-07-26 17:28:21 +0000
+# Host: 127.0.0.1 (MySQL 5.7.16)
+# Database: avanta
+# Generation Time: 2017-07-26 18:27:59 +0000
 # ************************************************************
 
 
@@ -20,7 +20,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Дамп таблицы catalog
+# Dump of table catalog
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `catalog`;
@@ -49,7 +49,7 @@ VALUES
 UNLOCK TABLES;
 
 
-# Дамп таблицы gallery
+# Dump of table gallery
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `gallery`;
@@ -88,7 +88,7 @@ VALUES
 UNLOCK TABLES;
 
 
-# Дамп таблицы migrations
+# Dump of table migrations
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `migrations`;
@@ -112,7 +112,7 @@ VALUES
 UNLOCK TABLES;
 
 
-# Дамп таблицы password_resets
+# Dump of table password_resets
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `password_resets`;
@@ -126,7 +126,7 @@ CREATE TABLE `password_resets` (
 
 
 
-# Дамп таблицы settings
+# Dump of table settings
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `settings`;
@@ -135,7 +135,7 @@ CREATE TABLE `settings` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `key` varchar(32) NOT NULL DEFAULT '',
   `name` varchar(64) DEFAULT NULL,
-  `value` varchar(255) DEFAULT NULL,
+  `value` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `key` (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -145,13 +145,20 @@ LOCK TABLES `settings` WRITE;
 
 INSERT INTO `settings` (`id`, `key`, `name`, `value`)
 VALUES
-	(1,'title','Название','Avanta');
+	(1,'main_desc','Главное описание','<span>The <b>AVANTA</b> Furniture <br> Superior Quality</span>'),
+	(2,'about_title','Заголовок о нас','Avanta SE IncadreaZA'),
+	(3,'about_desc','Описание о нас','<p>Compania Avanta oferă clienţilor săi mobilier pentru dormitoare confecţionat la comandă, găsind soluţii ideale pentru spaţiile neordinare şi limitate, cînd apare problema încadrării unui pat sau a altor elemente într-un dormitor nestandart.</p>\n    <p>Avanta este lider pe piaţa autohtonă la confecţionarea mobilierului din lemn natural. Oferim cele mai originale soluţii de proiectare a mobilierului, cu mare atenţie la detalii, stil practic şi rafinat satisfăcînd chiar şi cele mai pretenţioase gusturi. Iar gama largă de produse, oferă clienţilor noştri posibilitatea de a procura mobilă la cel mai avantajos preţ. Anume pentru aceste calităţi, cei care preţuiesc confortul şi calitatea înaltă a vieţii, aleg pentru dormitoarele lor anume mobilă de la Avanta</p>'),
+	(4,'about_subtitle','Текст под заголовком о нас','PERFECT <span>n orice interior</span>'),
+	(5,'about_name','Имя под описание о нас','- Dmitrii Fedosov. Avanta CEO'),
+	(6,'slider_title','Слайдер заголовок','CONFORtUL. <span>CALItatea.</span>'),
+	(7,'slider_desc','Слайдер описание','Avanta – cel mai sigur mobilier, stilat, funcţional şi durabil, produs din materie primă excelentă, cu accesorii de cea mai înaltă calitate, cu forme clare şi design original. Datorită acestor calităţi, mobilierul Avanta se încadrează perfect în orice interior.'),
+	(8,'copyright','Copyright','Copyright © 1996-2016 Company Co. All rights reserved');
 
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
-# Дамп таблицы slider
+# Dump of table slider
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `slider`;
@@ -159,6 +166,7 @@ DROP TABLE IF EXISTS `slider`;
 CREATE TABLE `slider` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(64) DEFAULT NULL,
+  `description` text,
   `image` varchar(255) DEFAULT NULL,
   `sort` smallint(5) DEFAULT NULL,
   `disabled` tinyint(1) NOT NULL DEFAULT '0',
@@ -168,17 +176,17 @@ CREATE TABLE `slider` (
 LOCK TABLES `slider` WRITE;
 /*!40000 ALTER TABLE `slider` DISABLE KEYS */;
 
-INSERT INTO `slider` (`id`, `title`, `image`, `sort`, `disabled`)
+INSERT INTO `slider` (`id`, `title`, `description`, `image`, `sort`, `disabled`)
 VALUES
-	(3,'Home Slider','storage/slider/25.jpg',NULL,0),
-	(4,'2','storage/slider/14.jpg',NULL,0),
-	(5,'3','storage/slider/2.jpg',NULL,0);
+	(3,'Home Slider','Description 1','storage/slider/25.jpg',NULL,0),
+	(4,'2','Description 2','storage/slider/14.jpg',NULL,0),
+	(5,'3','Description 3','storage/slider/2.jpg',NULL,0);
 
 /*!40000 ALTER TABLE `slider` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
-# Дамп таблицы users
+# Dump of table users
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `users`;

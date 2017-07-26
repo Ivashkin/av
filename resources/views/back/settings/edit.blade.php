@@ -13,7 +13,7 @@
                         <div class="form-group">
                             {!! Form::label('value', 'value', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
-                                {!! Form::text('value', null, ['class' => 'form-control']) !!}
+                                {!! Form::textarea('value', null, ['class' => 'form-control', 'rows' => 7]) !!}
                             </div>
                         </div>
                         <div class="form-group">

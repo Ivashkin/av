@@ -62,7 +62,7 @@ class SliderController extends Controller
     public function update(Request $request, $id)
     {
         $model = Slider::find($id);
-        $model->fill($request->only(['title', 'disabled']));
+        $model->fill($request->only(['title', 'disabled', 'description']));
 
         if ($model->save()) {
             $model->checkAndSaveThumbnail($request);

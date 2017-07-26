@@ -51,4 +51,9 @@ class Catalog extends Model
     {
         return $this->hasMany('App\Gallery', 'catalogId', 'id');
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('disabled', 0);
+    }
 }

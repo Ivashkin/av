@@ -12,14 +12,11 @@
 */
 
 Route::get('/', 'Main@index')->name('main');
-Route::get('/catalog', 'Main@catalog')->name('catalog.view');
+Route::get('/catalog/{alias}', 'Main@catalog')->name('catalog.view');
 
 Auth::routes();
 
-
 /* BACKEND ROUTES */
-//Route::get('/backend', 'BackendController@index')->name('backend');
-
 Route::prefix('backend')->middleware(['auth'])->namespace('Back')->group(function () {
     Route::get('/', 'BackendController@index')->name('backend');
 

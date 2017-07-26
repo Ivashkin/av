@@ -22,6 +22,12 @@
                                 {!! Form::text('title', null, ['class' => 'form-control']) !!}
                             </div>
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('description', 'Description', ['class' => 'col-lg-3 control-label']) !!}
+                            <div class="col-lg-9">
+                                {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => 3]) !!}
+                            </div>
+                        </div>
                         @if($model->image)
                             <div class="form-group">
                                 <div class="col-lg-4 col-lg-offset-3">

@@ -17,6 +17,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            {!! Form::label('description', 'Description', ['class' => 'col-lg-3 control-label']) !!}
+                            <div class="col-lg-9">
+                                {!! Form::textarea('description', old('description'), ['class' => 'form-control', 'rows' => 3]) !!}
+                            </div>
+                        </div>
+                        <div class="form-group">
                             {!! Form::label('image', 'Image', ['class' => 'col-lg-3 control-label']) !!}
                             <div class="col-lg-9">
                                 <div data-provides="fileupload" class="fileupload fileupload-new">

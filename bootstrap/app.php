@@ -41,6 +41,10 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+function __t($alias) {
+    return \App\Settings::__($alias);
+}
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

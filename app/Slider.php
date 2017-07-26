@@ -16,7 +16,7 @@ class Slider extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'image', 'sort', 'disabled'
+        'title', 'image', 'sort', 'disabled', 'description'
     ];
 
     public $timestamps = false;
@@ -41,5 +41,10 @@ class Slider extends Model
 
             $this->save();
         }
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('disabled', 0);
     }
 }
